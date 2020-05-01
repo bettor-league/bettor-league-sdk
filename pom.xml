@@ -17,12 +17,11 @@
         <repository>
             <id>github</id>
             <name>GitHub OWNER Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/bettor-league/bettor-league-sdk</url>
+            <url>https://maven.pkg.github.com/bettor-league</url>
         </repository>
     </distributionManagement>
 
     <properties>
-        <token>d2cd83c184f93c3e680cdc27e77d218707e90631</token>
     </properties>
 
 </project>
