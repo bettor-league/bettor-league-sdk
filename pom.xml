@@ -2,11 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.9.RELEASE</version>
+    </parent>
+
     <packaging>pom</packaging>
     <groupId>com.bettorleague</groupId>
-    <artifactId>bettor-league-sdk</artifactId>
-    <version>1.0</version>
-    <name>bettor-league-sdk</name>
+    <artifactId>sdk</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>sdk</name>
 
     <organization>
         <name>bettor-league</name>
@@ -17,11 +24,27 @@
         <repository>
             <id>github</id>
             <name>GitHub OWNER Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/bettor-league</url>
+            <url>https://maven.pkg.github.com/bettor-league/bettor-league-sdk</url>
         </repository>
     </distributionManagement>
 
     <properties>
+        <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>microservice-common</module>
+    </modules>
 </project>
