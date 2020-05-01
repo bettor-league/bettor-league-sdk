@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <groupId>com.bettorleague</groupId>
+    <artifactId>bettor-league-sdk</artifactId>
+    <version>1.0</version>
+    <name>bettor-league-sdk</name>
+
+    <organization>
+        <name>bettor-league</name>
+        <url>https://github.com/bettor-league</url>
+    </organization>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/bettor-league/bettor-league-sdk</url>
+        </repository>
+    </distributionManagement>
+
+    <properties>
+        <token>d2cd83c184f93c3e680cdc27e77d218707e90631</token>
+    </properties>
+
+</project>
