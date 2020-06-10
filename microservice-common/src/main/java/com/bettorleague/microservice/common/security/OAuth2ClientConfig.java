@@ -18,11 +18,11 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @EnableOAuth2Client
 @EnableDiscoveryClient
 @EnableFeignClients(basePackages = {"com.bettorleague"})
-public class OAuth2ClientConfiguration {
+public class OAuth2ClientConfig {
 
     private final OAuth2ClientContext oauth2ClientContext;
 
-    public OAuth2ClientConfiguration(OAuth2ClientContext oauth2ClientContext){
+    public OAuth2ClientConfig(OAuth2ClientContext oauth2ClientContext){
         this.oauth2ClientContext = oauth2ClientContext;
     }
 

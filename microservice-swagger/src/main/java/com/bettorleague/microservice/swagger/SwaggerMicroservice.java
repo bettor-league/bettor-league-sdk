@@ -1,8 +1,7 @@
-package com.bettorleague.microservice.mongo;
+package com.bettorleague.microservice.swagger;
 
-
-import com.bettorleague.microservice.mongo.config.AuditConfiguration;
-import com.bettorleague.microservice.mongo.config.MongoConfig;
+import com.bettorleague.microservice.swagger.config.RouterController;
+import com.bettorleague.microservice.swagger.config.SwaggerConfig;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.ElementType;
@@ -12,6 +11,9 @@ import java.lang.annotation.Target;
 
 @Retention(value = RetentionPolicy.RUNTIME)
 @Target(value = ElementType.TYPE)
-@Import({MongoConfig.class, AuditConfiguration.class})
-public @interface MongoMicroservice {
+@Import({
+        SwaggerConfig.class,
+        RouterController.class
+})
+public @interface SwaggerMicroservice {
 }

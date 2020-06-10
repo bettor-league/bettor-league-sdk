@@ -7,6 +7,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.9.RELEASE</version>
+        <relativePath/>
     </parent>
 
     <packaging>pom</packaging>
@@ -30,9 +31,10 @@
 
     <properties>
         <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
-        <springdoc.version>1.3.7</springdoc.version>
+        <springdoc.version>1.2.34</springdoc.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <sdk.version>1.0.0-SNAPSHOT</sdk.version>
     </properties>
 
     <dependencyManagement>
@@ -44,11 +46,34 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.bettorleague</groupId>
+                <artifactId>microservice-common</artifactId>
+                <version>${sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bettorleague</groupId>
+                <artifactId>microservice-model</artifactId>
+                <version>${sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bettorleague</groupId>
+                <artifactId>microservice-mongo</artifactId>
+                <version>${sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bettorleague</groupId>
+                <artifactId>microservice-swagger</artifactId>
+                <version>${sdk.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <modules>
         <module>microservice-common</module>
         <module>microservice-mongo</module>
+        <module>microservice-swagger</module>
+        <module>microservice-model</module>
+        <module>microservice-event</module>
     </modules>
 </project>

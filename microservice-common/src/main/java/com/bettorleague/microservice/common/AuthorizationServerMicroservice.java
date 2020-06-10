@@ -8,17 +8,14 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-
 @Retention(value = RetentionPolicy.RUNTIME)
 @Target(value = ElementType.TYPE)
 @Import({
-        ResourceServerConfig.class,
         OAuth2ClientConfig.class,
         MethodSecurityConfig.class,
         UnprotectedPath.class,
         ObjectMapperConfig.class,
         GlobalExceptionHandler.class
 })
-public @interface CommonMicroservice{
-
+public @interface AuthorizationServerMicroservice {
 }
