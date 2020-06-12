@@ -66,6 +66,11 @@
                 <artifactId>microservice-swagger</artifactId>
                 <version>${sdk.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.bettorleague</groupId>
+                <artifactId>microservice-event</artifactId>
+                <version>${sdk.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
