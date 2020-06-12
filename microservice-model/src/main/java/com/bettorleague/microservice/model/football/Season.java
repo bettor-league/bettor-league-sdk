@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
 import java.time.Instant;
+import java.util.Map;
 import java.util.Set;
 
 @Data
@@ -24,4 +25,6 @@ public class Season {
 
     @JsonIgnore
     private String competitionId;
+    @JsonIgnore
+    private Map<Source,String> ids;
 }
