@@ -1,30 +1,23 @@
 package com.bettorleague.microservice.model.football;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
+import com.bettorleague.microservice.model.json.JsonObject;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.*;
 
-import java.time.Instant;
-import java.util.Map;
-import java.util.Set;
+import java.util.Date;
 
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Season {
-    @Id
-    private String id;
-    private Instant startDate;
-    private Instant endDate;
-    private int matchDay;
-    private Set<Stage> availableStages;
-
-    @JsonIgnore
-    private String competitionId;
-    @JsonIgnore
-    private Map<Source,String> ids;
+public class Season extends JsonObject {
+    private Long id;
+    private Long currentMatchDay;
+    private Long availableMatchDay;
+    private Long availableMatchPerDay;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
+    private Date startDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
+    private Date endDate;
 }

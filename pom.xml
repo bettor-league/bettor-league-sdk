@@ -6,15 +6,15 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.9.RELEASE</version>
-        <relativePath/>
+        <version>3.0.4</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <packaging>pom</packaging>
     <groupId>com.bettorleague</groupId>
-    <artifactId>sdk</artifactId>
+    <artifactId>bettor-league-sdk</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>sdk</name>
+    <name>bettor-league-sdk</name>
 
     <organization>
         <name>bettor-league</name>
@@ -30,11 +30,12 @@
     </distributionManagement>
 
     <properties>
-        <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
-        <springdoc.version>1.2.34</springdoc.version>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <java.version>17</java.version>
+        <spring-cloud.version>2022.0.1</spring-cloud.version>
+        <springdoc.version>2.0.4</springdoc.version>
         <sdk.version>1.0.0-SNAPSHOT</sdk.version>
+        <axon-version>4.4</axon-version>
+        <axon-mongo-version>4.4</axon-mongo-version>
     </properties>
 
     <dependencyManagement>
@@ -71,6 +72,44 @@
                 <artifactId>microservice-event</artifactId>
                 <version>${sdk.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.bettorleague</groupId>
+                <artifactId>microservice-jdbc</artifactId>
+                <version>${sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bettorleague</groupId>
+                <artifactId>microservice-cqrs</artifactId>
+                <version>${sdk.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.axonframework</groupId>
+                <artifactId>axon-spring-boot-starter</artifactId>
+                <version>${axon-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.axonframework.extensions.mongo</groupId>
+                <artifactId>axon-mongo</artifactId>
+                <version>${axon-mongo-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>2.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.woodstox</groupId>
+                <artifactId>woodstox-core</artifactId>
+                <version>6.5.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>31.1-jre</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -80,5 +119,8 @@
         <module>microservice-swagger</module>
         <module>microservice-model</module>
         <module>microservice-event</module>
+        <module>microservice-jdbc</module>
+        <module>microservice-security</module>
+        <module>microservice-cqrs</module>
     </modules>
 </project>

@@ -1,19 +1,13 @@
 package com.bettorleague.microservice.model.exception.registration;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.server.ResponseStatusException;
 
-
-@Data
-@ResponseStatus(HttpStatus.CONFLICT)
-@EqualsAndHashCode(callSuper = true)
-public class CredentialException extends RuntimeException{
+public class CredentialException extends ResponseStatusException {
     public final String wrongCredential;
 
-    public CredentialException(String wrongCredential, String exception){
-        super(exception);
+    public CredentialException(String wrongCredential, String message) {
+        super(HttpStatus.CONFLICT, message);
         this.wrongCredential = wrongCredential;
     }
 }

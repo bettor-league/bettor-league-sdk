@@ -1,29 +1,31 @@
 package com.bettorleague.microservice.model.football;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
+import com.bettorleague.microservice.model.json.JsonObject;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.*;
 
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Competition {
-    @Id
-    private String id;
+public class Competition extends JsonObject {
+    private Long id;
     private String name;
+    private Competitiontype type;
+    private String code;
+    private String logo;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
+    private Date lastUpdated;
     private Area area;
-    private CompetitionType type;
-    private Set<String> logos;
-    private Season season;
-    private Gender gender;
+    private Season currentSeason;
+    private List<Season> seasons = new ArrayList<>();
+    private Set<Team> teams = new HashSet<>();
+    private List<Standing> standings = new ArrayList<>();
+    private List<Match> matches = new ArrayList<>();
+    private Set<StandingStage> availableStage = new HashSet<>();
+    private Set<StandingGroup> availableGroup = new HashSet<>();
 
-    @JsonIgnore
-    private Map<Source,String> ids;
 }

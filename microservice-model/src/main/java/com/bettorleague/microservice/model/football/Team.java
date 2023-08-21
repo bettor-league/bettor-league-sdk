@@ -1,37 +1,28 @@
 package com.bettorleague.microservice.model.football;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
+import com.bettorleague.microservice.model.json.JsonObject;
+import lombok.*;
 
-import javax.validation.constraints.Email;
-import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Team {
-    @Id
-    private String id;
+public class Team extends JsonObject {
+    private Long id;
     private Area area;
     private String name;
     private String shortName;
-    private String acronym;
+    private String tla;
     private String address;
     private String phone;
     private String website;
-    private String logo;
-    @Email
     private String email;
-    private int founded;
-    private List<String> colors;
+    private String logo;
+    private Long founded;
+    private String clubColors;
     private String stadium;
-
-    @JsonIgnore
-    private Map<Source,String> ids;
+    private Set<Player> squad;
 }

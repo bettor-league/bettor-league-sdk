@@ -1,6 +1,5 @@
 package com.bettorleague.microservice.swagger;
 
-import com.bettorleague.microservice.swagger.config.RouterController;
 import com.bettorleague.microservice.swagger.config.SwaggerConfig;
 import org.springframework.context.annotation.Import;
 
@@ -13,7 +12,6 @@ import java.lang.annotation.Target;
 @Target(value = ElementType.TYPE)
 @Import({
         SwaggerConfig.class,
-        RouterController.class
 })
 public @interface SwaggerMicroservice {
 }
