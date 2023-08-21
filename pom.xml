@@ -118,7 +118,6 @@
         <module>microservice-mongo</module>
         <module>microservice-swagger</module>
         <module>microservice-model</module>
-        <module>microservice-event</module>
         <module>microservice-jdbc</module>
         <module>microservice-security</module>
         <module>microservice-cqrs</module>

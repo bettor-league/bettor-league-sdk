@@ -1,1 +1,1 @@
-w# bettor-league-sdk
+# bettor-league-sdk
