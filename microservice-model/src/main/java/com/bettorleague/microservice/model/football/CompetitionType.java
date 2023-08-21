@@ -1,5 +1,5 @@
 package com.bettorleague.microservice.model.football;
 
-public enum Competitiontype {
+public enum CompetitionType {
     CUP,LEAGUE
 }

@@ -14,7 +14,7 @@ import java.util.*;
 public class Competition extends JsonObject {
     private Long id;
     private String name;
-    private Competitiontype type;
+    private CompetitionType type;
     private String code;
     private String logo;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
