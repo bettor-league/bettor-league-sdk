@@ -19,4 +19,4 @@ jobs:
       - name: Build with Maven
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        run: mvn clean install -s .github/workflows/settings.xml
+        run: mvn -B deploy -s .github/workflows/settings.xml
