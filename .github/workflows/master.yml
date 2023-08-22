@@ -14,12 +14,11 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
           cache: 'maven'
-          settings-path: .github/workflows
       - name: Build
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        run: mvn clean install
+        run: mvn clean install -s .github/workflows/settings.xml
       - name: Publish
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        run: mvn deploy
+        run: mvn deploy -s .github/workflows/settings.xml
