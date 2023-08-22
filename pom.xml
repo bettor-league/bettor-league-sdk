@@ -25,17 +25,15 @@
         <repository>
             <id>github</id>
             <name>GitHub OWNER Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/bettor-league</url>
+            <url>https://maven.pkg.github.com/bettor-league/bettor-league-sdk</url>
         </repository>
     </distributionManagement>
 
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2022.0.1</spring-cloud.version>
-        <springdoc.version>2.0.4</springdoc.version>
         <sdk.version>1.0.0-SNAPSHOT</sdk.version>
-        <axon-version>4.4</axon-version>
-        <axon-mongo-version>4.4</axon-mongo-version>
+        <springdoc.version>2.0.4</springdoc.version>
     </properties>
 
     <dependencyManagement>
