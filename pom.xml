@@ -7,7 +7,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.0.4</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
 
     <packaging>pom</packaging>
@@ -25,7 +25,7 @@
         <repository>
             <id>github</id>
             <name>GitHub OWNER Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/bettor-league/bettor-league-sdk</url>
+            <url>https://maven.pkg.github.com/bettor-league</url>
         </repository>
     </distributionManagement>
 
@@ -82,19 +82,6 @@
                 <artifactId>microservice-cqrs</artifactId>
                 <version>${sdk.version}</version>
             </dependency>
-
-            <dependency>
-                <groupId>org.axonframework</groupId>
-                <artifactId>axon-spring-boot-starter</artifactId>
-                <version>${axon-version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.axonframework.extensions.mongo</groupId>
-                <artifactId>axon-mongo</artifactId>
-                <version>${axon-mongo-version}</version>
-            </dependency>
-
             <dependency>
                 <groupId>org.yaml</groupId>
                 <artifactId>snakeyaml</artifactId>
