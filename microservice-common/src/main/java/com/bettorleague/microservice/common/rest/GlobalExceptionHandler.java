@@ -1,7 +1,7 @@
 package com.bettorleague.microservice.common.rest;
 
-import com.bettorleague.microservice.model.response.ExceptionResponse;
 import com.bettorleague.microservice.model.exception.ServiceException;
+import com.bettorleague.microservice.model.response.ExceptionResponse;
 import com.bettorleague.microservice.model.validator.ValidationError;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
@@ -16,11 +16,12 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 
 @RestControllerAdvice
 @ComponentScan("com.bettorleague")
-public class GlobalExceptionHandler  {
+public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ExceptionResponse> handleValidationException(MethodArgumentNotValidException ex) {
@@ -38,7 +39,9 @@ public class GlobalExceptionHandler  {
     @ExceptionHandler(ServiceException.class)
     public ResponseEntity<ExceptionResponse> handleServiceException(ServiceException exception) {
         final HttpStatus httpStatus = Optional.ofNullable(exception).map(ServiceException::getHttpStatus).orElse(HttpStatus.INTERNAL_SERVER_ERROR);
-        final String message = Optional.ofNullable(exception).map(Throwable::getMessage).orElse(null);
+        final Optional<String> throwableMessage = Optional.ofNullable(exception).map(Throwable::getMessage);
+        final Optional<String> exceptionMessage = Optional.ofNullable(exception).map(ServiceException::getMessage);
+        final String message = Stream.of(throwableMessage, exceptionMessage).filter(Optional::isPresent).map(Optional::get).findFirst().orElse(null);
         final ExceptionResponse response = new ExceptionResponse(httpStatus, message);
         return new ResponseEntity<>(response, httpStatus);
     }
@@ -57,9 +60,23 @@ public class GlobalExceptionHandler  {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ExceptionResponse> handleValidationException(Exception exception) {
+        final Optional<ServiceException> optionalServiceException = asServiceException(exception);
+        if (optionalServiceException.isPresent()) {
+            return handleServiceException(optionalServiceException.get());
+        }
         final HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
         final ExceptionResponse response = new ExceptionResponse(httpStatus, exception.getLocalizedMessage());
         return new ResponseEntity<>(response, httpStatus);
     }
+
+    private Optional<ServiceException> asServiceException(Exception exception) {
+        Optional<ServiceException> result = Optional.empty();
+        final Throwable cause = exception.getCause();
+        if (ServiceException.class.isAssignableFrom(cause.getClass())) {
+            result = Optional.of((ServiceException) cause);
+        }
+        return result;
+    }
+
 
 }

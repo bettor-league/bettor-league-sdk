@@ -1,7 +1,9 @@
 package com.bettorleague.microservice.mongo.config;
 
-import com.bettorleague.microservice.model.entity.BaseEntity;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -14,7 +16,7 @@ import java.time.Instant;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuditedEntity extends BaseEntity implements Serializable {
+public class AuditedEntity  implements Serializable {
     @CreatedBy
     private String createdBy;
 

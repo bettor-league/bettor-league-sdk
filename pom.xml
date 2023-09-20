@@ -52,7 +52,17 @@
             </dependency>
             <dependency>
                 <groupId>com.bettorleague</groupId>
+                <artifactId>microservice-starter</artifactId>
+                <version>${sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bettorleague</groupId>
                 <artifactId>microservice-model</artifactId>
+                <version>${sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bettorleague</groupId>
+                <artifactId>microservice-security</artifactId>
                 <version>${sdk.version}</version>
             </dependency>
             <dependency>
@@ -106,5 +116,6 @@
         <module>microservice-jdbc</module>
         <module>microservice-security</module>
         <module>microservice-cqrs</module>
+        <module>microservice-starter</module>
     </modules>
 </project>
