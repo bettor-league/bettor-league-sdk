@@ -3,8 +3,8 @@ package com.bettorleague.microservice.common.jackson;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.springframework.cloud.openfeign.support.PageJacksonModule;
-import org.springframework.cloud.openfeign.support.SortJacksonModule;
+//import org.springframework.cloud.openfeign.support.PageJacksonModule;
+//import org.springframework.cloud.openfeign.support.SortJacksonModule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,8 +18,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 import static com.fasterxml.jackson.databind.DeserializationFeature.*;
-import static com.fasterxml.jackson.databind.SerializationFeature.FAIL_ON_EMPTY_BEANS;
-import static com.fasterxml.jackson.databind.SerializationFeature.WRITE_DATES_AS_TIMESTAMPS;
+import static com.fasterxml.jackson.databind.SerializationFeature.*;
 
 @Configuration
 public class ObjectMapperConfig {
@@ -36,8 +35,8 @@ public class ObjectMapperConfig {
     public ObjectMapper objectMapper() {
         final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
-        objectMapper.registerModule(new PageJacksonModule());
-        objectMapper.registerModule(new SortJacksonModule());
+        //objectMapper.registerModule(new PageJacksonModule());
+        //objectMapper.registerModule(new SortJacksonModule());
 
         objectMapper.disable(FAIL_ON_EMPTY_BEANS);
         objectMapper.disable(WRITE_DATES_AS_TIMESTAMPS);
@@ -56,4 +55,6 @@ public class ObjectMapperConfig {
 
         return objectMapper;
     }
+
+
 }

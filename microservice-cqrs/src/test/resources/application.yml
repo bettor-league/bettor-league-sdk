@@ -1,0 +1,19 @@
+server:
+  port: 0
+
+mongo:
+  event:
+    authenticationDatabase: admin
+    username: admin
+    password: admin
+    host: localhost
+    port: 27017
+    database: event-store
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+  application:
+    name: entity-service
+  main:
+    allow-bean-definition-overriding: true

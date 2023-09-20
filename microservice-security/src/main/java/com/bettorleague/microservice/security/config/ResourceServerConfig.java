@@ -15,10 +15,9 @@ import org.springframework.security.oauth2.client.registration.ClientRegistratio
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfigurationSource;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-
 
 
 @Configuration
@@ -31,7 +30,9 @@ public class ResourceServerConfig {
     private final List<String> unprotectedPath;
 
     public ResourceServerConfig(final UnprotectedPath unprotectedPath) {
-        this.unprotectedPath = Optional.ofNullable(unprotectedPath).map(UnprotectedPath::getUnprotectedPath).orElseGet(ArrayList::new);
+        this.unprotectedPath = Optional.ofNullable(unprotectedPath)
+                .map(UnprotectedPath::getUnprotectedPath)
+                .orElse(Collections.emptyList());
     }
 
     @Bean
@@ -43,6 +44,7 @@ public class ResourceServerConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(final HttpSecurity http,
                                                    final CorsConfigurationSource corsConfigurationSource) throws Exception {
+
 
         for (String path : unprotectedPath) {
             http.authorizeHttpRequests().requestMatchers(path).permitAll();

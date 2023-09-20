@@ -5,9 +5,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
 @Getter
+
 public class ServiceException extends ResponseStatusException {
     private final String message;
     private final HttpStatus httpStatus;
+
+    @lombok.Builder
     public ServiceException(HttpStatus httpStatus, String message) {
         super(httpStatus, message);
         this.httpStatus = httpStatus;
