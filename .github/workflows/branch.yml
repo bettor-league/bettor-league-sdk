@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - '*'
-      - '!master'
+      - '!master.yml'
       - '!gh-pages'
 
 jobs:
