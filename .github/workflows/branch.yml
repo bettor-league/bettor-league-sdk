@@ -9,6 +9,8 @@ on:
 
 jobs:
   call-reusable:
-    uses: bettor-league/reusable-workflow/.github/workflows/java-maven-ci.yml@master.yml
+    uses: bettor-league/reusable-workflow/.github/workflows/java-maven-ci.yml@master
+    with:
+      maven_command: 'install'
     secrets:
       github-token: ${{ secrets.TOKEN }}
