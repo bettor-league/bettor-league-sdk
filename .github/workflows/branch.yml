@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - '*'
-      - '!master'
+      - '!master.yml'
       - '!gh-pages'
 
 jobs:
   call-reusable:
-    uses: bettor-league/reusable-workflow/.github/workflows/java-maven-ci.yml@master
+    uses: bettor-league/reusable-workflow/.github/workflows/java-maven-ci.yml@master.yml
     secrets:
       github-token: ${{ secrets.TOKEN }}
