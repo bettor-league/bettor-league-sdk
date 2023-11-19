@@ -11,4 +11,4 @@ jobs:
   call-reusable:
     uses: bettor-league/reusable-workflow/.github/workflows/java-maven-ci.yml@master
     secrets:
-      github-token: ${{ secrets.TOKEN }}
+      maven-settings: ${{ secrets.MAVEN_SETTINGS }}
