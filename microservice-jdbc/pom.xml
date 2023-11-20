@@ -6,15 +6,15 @@
     <parent>
         <groupId>com.bettorleague</groupId>
         <artifactId>bettor-league-sdk</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <name>microservice-jdbc</name>
     <artifactId>microservice-jdbc</artifactId>
     <packaging>jar</packaging>
-    <!--<version>1.0.0-SNAPSHOT</version>-->
-    <version>1.0.0-SNAPSHOT</version>
+    <!--<version>1.0</version>-->
+    <version>1.0</version>
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>

@@ -8,7 +8,9 @@ on:
       - '!gh-pages'
 
 jobs:
-  call-reusable:
+  build-sdk:
     uses: bettor-league/reusable-workflow/.github/workflows/java-maven-ci.yml@master
-    secrets:
-      maven-settings: ${{ secrets.MAVEN_SETTINGS }}
+    with:
+      maven_command: 'clean install'
+      maven_profiles: 'default'
+    secrets: inherit
