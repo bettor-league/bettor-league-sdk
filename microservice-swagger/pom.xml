@@ -13,7 +13,6 @@
     <name>microservice-swagger</name>
     <artifactId>microservice-swagger</artifactId>
     <packaging>jar</packaging>
-    <!--<version>1.0</version>-->
     <version>1.0</version>
 
     <dependencies>
