@@ -13,7 +13,6 @@
     <name>microservice-mongo</name>
     <artifactId>microservice-mongo</artifactId>
     <packaging>jar</packaging>
-    <!--<version>1.0</version>-->
     <version>1.0</version>
 
     <dependencyManagement>

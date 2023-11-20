@@ -134,6 +134,7 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
                 <configuration>
+                    <!--suppress UnresolvedMavenProperty -->
                     <newVersion>${project.version}-${timestamp}-SHA${buildNumber}</newVersion>
                     <oldVersion>${project.version}</oldVersion>
                     <generateBackupPoms>false</generateBackupPoms>

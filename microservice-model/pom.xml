@@ -13,7 +13,6 @@
     <name>microservice-model</name>
     <artifactId>microservice-model</artifactId>
     <packaging>jar</packaging>
-    <!--<version>1.0</version>-->
     <version>1.0</version>
 
     <dependencies>
