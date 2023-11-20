@@ -31,8 +31,8 @@
 
     <properties>
         <java.version>17</java.version>
+        <sdk.version>1.0</sdk.version>
         <spring-cloud.version>2022.0.1</spring-cloud.version>
-        <sdk.version>${project.version}</sdk.version>
         <springdoc.version>2.0.4</springdoc.version>
     </properties>
 
@@ -133,6 +133,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
+                <version>2.12.0</version>
                 <configuration>
                     <!--suppress UnresolvedMavenProperty -->
                     <newVersion>${project.version}-${timestamp}-SHA${buildNumber}</newVersion>
@@ -140,6 +141,7 @@
                     <generateBackupPoms>false</generateBackupPoms>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 </project>
