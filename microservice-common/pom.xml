@@ -25,6 +25,8 @@
         <dependency>
             <groupId>com.bettorleague</groupId>
             <artifactId>microservice-model</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>

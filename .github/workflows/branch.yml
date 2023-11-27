@@ -9,8 +9,7 @@ on:
 
 jobs:
   build-sdk:
-    uses: bettor-league/reusable-workflow/.github/workflows/java-maven-ci.yml@master
+    uses: bettor-league/reusable-workflow/.github/workflows/java-project.yml@master
     with:
       maven_command: 'clean install'
-      maven_profiles: 'default'
     secrets: inherit

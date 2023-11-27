@@ -13,8 +13,8 @@
     <name>microservice-jdbc</name>
     <artifactId>microservice-jdbc</artifactId>
     <packaging>jar</packaging>
-    <!--<version>1.0</version>-->
     <version>1.0</version>
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>

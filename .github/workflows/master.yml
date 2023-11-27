@@ -6,9 +6,8 @@ on:
       - 'master'
 
 jobs:
-  deploy-sdk:
-    uses: bettor-league/reusable-workflow/.github/workflows/java-maven-ci.yml@master
+  build-sdk:
+    uses: bettor-league/reusable-workflow/.github/workflows/java-project.yml@master
     with:
       maven_command: 'clean deploy'
-      maven_profiles: 'default'
     secrets: inherit
